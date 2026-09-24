@@ -105,6 +105,11 @@
     background: var(--color-dorado);
     color: var(--color-noche);
   }
+  /* Tailwind v4 deja el cursor por defecto en botones: lo volvemos a "mano". */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
   :focus-visible {
     outline: 2px solid var(--color-dorado);
     outline-offset: 3px;
