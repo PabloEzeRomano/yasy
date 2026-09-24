@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { ArrowRight, Constellations, Moon, MoonPhases } from "@/components/Decor";
+import { ArrowRight, Constellations, Moon, MoonPhases, ORO_FILL } from "@/components/Decor";
 import { brand } from "@/lib/brand";
 
 const HERRAMIENTAS = ["Yoga", "Meditación", "Movimiento consciente", "Respiración", "Comunicación", "Escritura"];
@@ -13,7 +13,7 @@ const PILARES = [
 ] as const;
 
 const ctaPrimary =
-  "caps inline-flex h-[60px] items-center gap-3 rounded-full bg-dorado px-9 text-[15px] font-medium tracking-[0.14em] text-noche transition-colors hover:bg-[#e0bd4a]";
+  "caps inline-flex h-[60px] items-center gap-3 rounded-full bg-oro px-9 text-[15px] font-medium tracking-[0.14em] text-noche transition-[filter] hover:brightness-110";
 
 export default function Home() {
   const { contact } = brand;
@@ -24,19 +24,19 @@ export default function Home() {
         <Constellations className="text-dorado opacity-30" />
         <nav className="relative mx-auto flex h-24 max-w-[1440px] items-center justify-between px-5 sm:px-10 lg:h-28 lg:px-24">
           <Link href="/" className="flex items-center gap-3.5">
-            <Logo className="size-11 text-dorado lg:size-[52px]" label="" />
+            <Logo className="size-11 lg:size-[52px]" gold label="" />
             <span className="font-display text-2xl tracking-[0.18em] lg:text-[30px]">{brand.name}</span>
           </Link>
           <div className="flex items-center gap-10 text-sm uppercase tracking-[0.16em]">
-            <a href="#ofrezco" className="hidden text-arena hover:text-dorado lg:inline">Qué ofrezco</a>
-            <a href="#para-quien" className="hidden text-arena hover:text-dorado lg:inline">Para quién</a>
-            <a href="#contacto" className="hidden text-arena hover:text-dorado lg:inline">Contacto</a>
+            <a href="#ofrezco" className="hidden text-arena hover:text-oro lg:inline">Qué ofrezco</a>
+            <a href="#para-quien" className="hidden text-arena hover:text-oro lg:inline">Para quién</a>
+            <a href="#contacto" className="hidden text-arena hover:text-oro lg:inline">Contacto</a>
             <Link
               href="/ficha"
-              className="inline-flex h-11 items-center rounded-full border border-dorado px-5 text-dorado transition-colors hover:bg-dorado hover:text-noche lg:h-[46px] lg:px-6"
+              className="group inline-flex border border-dorado h-11 items-center rounded-full px-5 transition-colors hover:bg-oro lg:h-[46px] lg:px-6"
             >
-              <span className="sm:hidden">Ficha</span>
-              <span className="max-sm:hidden">Completá tu ficha</span>
+              <span className="text-oro group-hover:oro-solid group-hover:text-noche sm:hidden">Ficha</span>
+              <span className="text-oro group-hover:oro-solid group-hover:text-noche max-sm:hidden">Completá tu ficha</span>
             </Link>
           </div>
         </nav>
@@ -46,7 +46,7 @@ export default function Home() {
             <h1 className="font-display text-7xl leading-[0.92] tracking-[-0.01em] sm:text-8xl lg:text-[132px]">
               El tiempo
               <br />
-              es <em className="text-dorado">hoy.</em>
+              es <em className="text-oro">hoy.</em>
             </h1>
             <p className="max-w-[500px] text-lg leading-relaxed font-light text-arena sm:text-xl">
               Un lugar de encuentro con vos: un espacio para comprender, conectar y transformar, desde un lugar
@@ -54,21 +54,21 @@ export default function Home() {
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-7">
               <Link href="/ficha" className={ctaPrimary}>
-                Empezá tu ficha <ArrowRight />
+                Completá tu ficha <ArrowRight />
               </Link>
               <a
                 href={contact.whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] tracking-[0.08em] text-arena underline underline-offset-[6px] hover:text-dorado"
+                className="text-[15px] tracking-[0.08em] text-arena underline underline-offset-[6px] hover:text-oro"
               >
                 Escribime por WhatsApp
               </a>
             </div>
           </div>
           <div className="flex flex-col items-center gap-12">
-            <Logo className="size-64 text-dorado sm:size-80 lg:size-[470px]" label="" />
-            <MoonPhases size="size-7 lg:size-[34px]" className="text-dorado" />
+            <Logo className="size-64 sm:size-80 lg:size-[470px]" gold label="" />
+            <MoonPhases size="size-7 lg:size-[34px]" gold />
           </div>
         </div>
       </header>
@@ -94,7 +94,7 @@ export default function Home() {
           <ul className="grid grid-cols-2 gap-px border-y border-linea bg-[#DCCFB4] sm:grid-cols-3 xl:grid-cols-6">
             {HERRAMIENTAS.map((h, i) => (
               <li key={h} className="flex flex-col gap-3.5 bg-marfil px-5 py-8">
-                <span className="font-display text-[22px] text-dorado-ink italic">{ROMANOS[i]}</span>
+                <span className="font-display text-[22px] text-oro-ink italic">{ROMANOS[i]}</span>
                 <span className="font-display text-[28px] leading-[1.05] lg:text-3xl">{h}</span>
               </li>
             ))}
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="mx-auto flex max-w-[1440px] flex-col gap-14 px-5 py-24 sm:px-10 lg:px-24 lg:py-32">
             <div className="grid gap-8 lg:grid-cols-2">
               <article className="flex min-h-[400px] flex-col gap-6 rounded-[28px] bg-noche p-10 text-marfil lg:p-14">
-                <Logo className="size-14 text-dorado" label="" />
+                <Logo className="size-14" gold label="" />
                 <h3 className="font-display text-5xl leading-none lg:text-[52px]">Sesiones individuales</h3>
                 <p className="text-lg leading-[1.7] font-light text-arena">
                   Un acompañamiento a tu medida. Combino diferentes herramientas para adaptarme a lo que cada proceso
@@ -114,7 +114,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/ficha"
-                  className="mt-auto self-start text-sm tracking-[0.16em] text-dorado uppercase underline underline-offset-[6px] hover:text-marfil"
+                  className="mt-auto self-start text-sm tracking-[0.16em] text-oro uppercase underline underline-offset-[6px] hover:oro-solid hover:text-marfil"
                 >
                   Completá tu ficha inicial
                 </Link>
@@ -149,7 +149,7 @@ export default function Home() {
         <section id="para-quien" className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-24 lg:py-36">
           <div className="flex max-w-[1100px] flex-col gap-9">
             <p className="font-display text-4xl leading-[1.12] sm:text-5xl lg:text-6xl">
-              Para quienes sienten la necesidad de <em className="text-dorado-ink">parar, escucharse</em> y comprender
+              Para quienes sienten la necesidad de <em className="text-oro-ink">parar, escucharse</em> y comprender
               mejor lo que les sucede.
             </p>
             <p className="max-w-[680px] text-lg leading-[1.7] font-light text-tinta lg:text-[19px]">
@@ -172,7 +172,7 @@ export default function Home() {
           <div className="grid gap-12 md:grid-cols-3 md:gap-8">
             {PILARES.map((p) => (
               <div key={p.title} className="flex flex-col gap-5">
-                <Moon phase={p.phase} className="size-10 text-dorado-ink" />
+                <Moon phase={p.phase} className="size-10" gold="ink" />
                 <h3 className="font-display text-4xl font-medium">{p.title}</h3>
                 <p className="text-[17px] leading-[1.7] font-light text-tinta">{p.text}</p>
               </div>
@@ -182,12 +182,12 @@ export default function Home() {
 
         {/* CTA */}
         <section className="flex flex-col items-center gap-9 bg-noche px-5 py-28 text-center text-marfil sm:px-10 lg:py-32">
-          <MoonPhases size="size-7 lg:size-[34px]" className="text-dorado" />
+          <MoonPhases size="size-7 lg:size-[34px]" gold />
           <h2 className="max-w-[900px] font-display text-5xl leading-none sm:text-6xl lg:text-[80px]">
-            Tu primer paso es <em className="text-dorado">contarme de vos.</em>
+            Tu primer paso es <em className="text-oro">contarme de vos.</em>
           </h2>
           <p className="max-w-[560px] text-lg leading-[1.7] font-light text-arena lg:text-[19px]">
-            Completá la ficha inicial antes de nuestra primera sesión. Son siete preguntas y te lleva unos minutos.
+            Completá la ficha inicial antes de nuestra primera sesión. Son siete preguntas y te lleva solo unos minutos.
           </p>
           <Link href="/ficha" className={ctaPrimary}>
             Completar la ficha
@@ -201,10 +201,10 @@ export default function Home() {
           <div className="flex flex-col justify-between gap-12 lg:flex-row lg:items-start">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3.5">
-                <Logo className="size-14 text-dorado" label="" />
+                <Logo className="size-14" gold label="" />
                 <span className="font-display text-[34px] tracking-[0.18em] text-marfil">{brand.name}</span>
               </div>
-              <span className="font-display text-2xl italic text-dorado">{brand.slogan}</span>
+              <span className="self-start font-display text-2xl italic text-oro">{brand.slogan}</span>
             </div>
             <dl className="grid gap-8 sm:grid-cols-3 sm:gap-14">
               {[
@@ -218,7 +218,7 @@ export default function Home() {
                     <a
                       href={c.href}
                       {...(c.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="text-marfil underline-offset-4 hover:text-dorado hover:underline"
+                      className="text-marfil underline-offset-4 hover:text-oro hover:underline"
                     >
                       {c.v}
                     </a>
@@ -235,8 +235,8 @@ export default function Home() {
                 gemm-apps
               </a>{" "}
               con
-              <svg viewBox="0 0 24 24" className="size-4 text-dorado" role="img" aria-label="amor">
-                <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="currentColor" />
+              <svg viewBox="0 0 24 24" className="size-4" role="img" aria-label="amor">
+                <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill={ORO_FILL} />
               </svg>
             </span>
           </div>

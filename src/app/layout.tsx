@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
+import { OroDefs } from "@/components/Decor";
 import { brand } from "@/lib/brand";
 import "./globals.css";
 
@@ -30,7 +31,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" data-scroll-behavior="smooth" className={`${cormorant.variable} ${jost.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        <OroDefs />
+        {children}
+      </body>
     </html>
   );
 }

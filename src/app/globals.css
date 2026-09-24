@@ -34,6 +34,65 @@
   }
 }
 
+/* Dorado metálico: el #D4AF37 plano se ve amarillo, así que el "oro" de marca
+   es un gradiente con sombra y brillo alrededor de ese tono base. */
+:root {
+  --oro-sombra: #a8842a;
+  --oro-base: #d4af37;
+  --oro-brillo: #f4e2a1;
+  --gradient-oro: linear-gradient(
+    120deg,
+    var(--oro-sombra) 0%,
+    var(--oro-base) 25%,
+    var(--oro-brillo) 48%,
+    var(--oro-base) 68%,
+    var(--oro-sombra) 100%
+  );
+
+  /* Versión oscura (dorado-ink) para fondos claros, con el mismo efecto. */
+  --oro-ink-sombra: #6b5116;
+  --oro-ink-base: #8a6a1e;
+  --oro-ink-brillo: #c29a3a;
+  --gradient-oro-ink: linear-gradient(
+    120deg,
+    var(--oro-ink-sombra) 0%,
+    var(--oro-ink-base) 25%,
+    var(--oro-ink-brillo) 48%,
+    var(--oro-ink-base) 68%,
+    var(--oro-ink-sombra) 100%
+  );
+}
+
+/* Fondo dorado (botones, barra de progreso, logo). */
+@utility bg-oro {
+  background-image: var(--gradient-oro);
+}
+
+/* Texto dorado. `oro-solid` lo vuelve a color sólido (útil en hover). */
+@utility text-oro {
+  background-image: var(--gradient-oro);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--oro-fill, transparent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-decoration-color: var(--oro-base);
+}
+
+@utility text-oro-ink {
+  background-image: var(--gradient-oro-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--oro-fill, transparent);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  text-decoration-color: var(--oro-ink-base);
+}
+
+@utility oro-solid {
+  --oro-fill: currentColor;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

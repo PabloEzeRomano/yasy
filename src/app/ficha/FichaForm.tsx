@@ -96,12 +96,12 @@ export function FichaForm() {
       {/* Panel lateral (desktop) */}
       <aside className="hidden flex-col gap-12 bg-noche px-14 py-12 text-marfil lg:flex">
         <Link href="/" className="flex items-center gap-3">
-          <Logo className="size-11 text-dorado" label="" />
+          <Logo className="size-11" gold label="" />
           <span className="font-display text-[26px] tracking-[0.18em]">{brand.name}</span>
         </Link>
         <div className="flex flex-col gap-3.5">
           <h1 className="font-display text-6xl leading-none">
-            Ficha <em className="text-dorado">inicial</em>
+            Ficha <em className="text-oro">inicial</em>
           </h1>
           <p className="font-light leading-relaxed text-bruma">
             Para conocerte un poco antes de nuestra primera sesión.
@@ -129,9 +129,9 @@ export function FichaForm() {
                   <span
                     className={`inline-flex size-[30px] shrink-0 items-center justify-center rounded-full text-[13px] ${
                       active
-                        ? "bg-dorado text-noche"
+                        ? "bg-oro text-noche"
                         : done
-                          ? "border border-dorado text-dorado"
+                          ? "border border-dorado text-oro"
                           : "border border-[#4A5366]"
                     }`}
                   >
@@ -143,9 +143,9 @@ export function FichaForm() {
             );
           })}
         </ol>
-        <div className="mt-auto flex items-center justify-between text-dorado">
-          <span className="font-display text-xl italic">{brand.slogan}</span>
-          <MoonPhases size="size-4" />
+        <div className="mt-auto flex items-center justify-between">
+          <span className="font-display text-xl italic text-oro">{brand.slogan}</span>
+          <MoonPhases size="size-4" gold />
         </div>
       </aside>
 
@@ -154,11 +154,11 @@ export function FichaForm() {
         {/* Encabezado móvil */}
         <header className="flex h-16 items-center justify-between bg-noche px-5 text-marfil lg:hidden">
           <Link href="/" className="flex items-center gap-2.5">
-            <Logo className="size-[34px] text-dorado" label="" />
+            <Logo className="size-[34px]" gold label="" />
             <span className="font-display text-xl tracking-[0.18em]">{brand.name}</span>
           </Link>
           {current && (
-            <span className="text-sm text-dorado">
+            <span className="text-sm text-oro">
               {step} / {TOTAL}
             </span>
           )}
@@ -170,7 +170,7 @@ export function FichaForm() {
               <>
                 <div className="h-0.5 flex-1 overflow-hidden rounded bg-[#E1D6C8]">
                   <div
-                    className="h-full bg-dorado transition-[width] duration-500"
+                    className="h-full bg-oro transition-[width] duration-500"
                     style={{ width: `${(step / TOTAL) * 100}%` }}
                   />
                 </div>
@@ -408,7 +408,7 @@ export function FichaForm() {
                     type="submit"
                     disabled={pending}
                     className={`caps inline-flex h-[60px] items-center gap-3 rounded-full px-9 text-[15px] tracking-[0.14em] transition-colors disabled:opacity-60 ${
-                      isLast ? "bg-dorado text-noche hover:bg-[#c9a42e]" : "bg-noche text-marfil hover:bg-noche-deep"
+                      isLast ? "bg-oro text-noche hover:brightness-110" : "bg-noche text-marfil hover:bg-noche-deep"
                     }`}
                   >
                     {pending ? "Enviando…" : isLast ? "Enviar" : "Siguiente"}

@@ -4,13 +4,15 @@ type LogoProps = {
   className?: string;
   /** Texto accesible. Pasá "" si el logo es decorativo (hay texto al lado). */
   label?: string;
+  /** En modo "tint", pinta el logo con el gradiente dorado en vez de `currentColor`. */
+  gold?: boolean;
 };
 
 /**
  * Logo de YASY. Lee el archivo definido en `brand.logo.src`.
- * En modo "tint" toma `currentColor`, así que se colorea con `text-*`.
+ * En modo "tint" toma `currentColor` (se colorea con `text-*`) o el dorado con `gold`.
  */
-export function Logo({ className = "", label = brand.name }: LogoProps) {
+export function Logo({ className = "", label = brand.name, gold = false }: LogoProps) {
   const a11y = label
     ? { role: "img" as const, "aria-label": label }
     : { "aria-hidden": true as const };
@@ -26,7 +28,7 @@ export function Logo({ className = "", label = brand.name }: LogoProps) {
   return (
     <span
       {...a11y}
-      className={`inline-block shrink-0 bg-current ${className}`}
+      className={`inline-block shrink-0 ${gold ? "bg-oro" : "bg-current"} ${className}`}
       style={{ mask, WebkitMask: mask }}
     />
   );
