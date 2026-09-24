@@ -98,6 +98,8 @@
     scroll-behavior: smooth;
   }
   body {
+    /* Los controles de formulario siempre en claro, aunque el sistema esté en oscuro. */
+    color-scheme: light;
     background: var(--color-marfil);
     color: var(--color-noche);
   }
