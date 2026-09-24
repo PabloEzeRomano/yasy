@@ -101,7 +101,7 @@ export function Constellations({ className = "" }: { className?: string }) {
   );
 }
 
-export function ArrowRight({ className = "size-[18px]" }: { className?: string }) {
+export function ArrowRight({ className = "size-4.5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
       <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -109,7 +109,7 @@ export function ArrowRight({ className = "size-[18px]" }: { className?: string }
   );
 }
 
-export function ArrowLeft({ className = "size-[18px]" }: { className?: string }) {
+export function ArrowLeft({ className = "size-4.5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
       <path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />

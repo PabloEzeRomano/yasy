@@ -13,7 +13,7 @@ const PILARES = [
 ] as const;
 
 const ctaPrimary =
-  "caps inline-flex h-[60px] items-center gap-3 rounded-full bg-oro px-9 text-[15px] font-medium tracking-[0.14em] text-noche transition-[filter] hover:brightness-110";
+  "caps inline-flex h-15 items-center gap-3 rounded-full bg-oro px-9 text-[15px] font-medium tracking-[0.14em] text-noche transition-[filter] hover:brightness-110";
 
 export default function Home() {
   const { contact } = brand;
@@ -22,9 +22,9 @@ export default function Home() {
       {/* HERO */}
       <header className="relative overflow-hidden bg-noche text-marfil">
         <Constellations className="text-dorado opacity-30" />
-        <nav className="relative mx-auto flex h-24 max-w-[1440px] items-center justify-between px-5 sm:px-10 lg:h-28 lg:px-24">
+        <nav className="relative mx-auto flex h-24 max-w-360 items-center justify-between px-5 sm:px-10 lg:h-28 lg:px-24">
           <Link href="/" className="flex items-center gap-3.5">
-            <Logo className="size-11 lg:size-[52px]" gold label="" />
+            <Logo className="size-11 lg:size-1.3" gold label="" />
             <span className="font-display text-2xl tracking-[0.18em] lg:text-[30px]">{brand.name}</span>
           </Link>
           <div className="flex items-center gap-10 text-sm uppercase tracking-[0.16em]">
@@ -33,7 +33,7 @@ export default function Home() {
             <a href="#contacto" className="hidden text-arena hover:text-oro lg:inline">Contacto</a>
             <Link
               href="/ficha"
-              className="group inline-flex border border-dorado h-11 items-center rounded-full px-5 transition-colors hover:bg-oro lg:h-[46px] lg:px-6"
+              className="group inline-flex border border-dorado h-11 items-center rounded-full px-5 transition-colors hover:bg-oro lg:h-11.5 lg:px-6"
             >
               <span className="text-oro group-hover:oro-solid group-hover:text-noche sm:hidden">Ficha</span>
               <span className="text-oro group-hover:oro-solid group-hover:text-noche max-sm:hidden">Completá tu ficha</span>
@@ -41,14 +41,14 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="relative mx-auto grid max-w-[1440px] items-center gap-12 px-5 pt-8 pb-20 sm:px-10 lg:min-h-[760px] lg:grid-cols-2 lg:px-24 lg:pt-0 lg:pb-24">
+        <div className="relative mx-auto grid max-w-360 items-center gap-12 px-5 pt-8 pb-20 sm:px-10 lg:min-h-190 lg:grid-cols-2 lg:px-24 lg:pt-0 lg:pb-24">
           <div className="flex flex-col gap-8">
             <h1 className="font-display text-7xl leading-[0.92] tracking-[-0.01em] sm:text-8xl lg:text-[132px]">
               El tiempo
               <br />
               es <em className="text-oro">hoy.</em>
             </h1>
-            <p className="max-w-[500px] text-lg leading-relaxed font-light text-arena sm:text-xl">
+            <p className="max-w-125 text-lg leading-relaxed font-light text-arena sm:text-xl">
               Un lugar de encuentro con vos: un espacio para comprender, conectar y transformar, desde un lugar
               amable, consciente y real.
             </p>
@@ -67,15 +67,15 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col items-center gap-12">
-            <Logo className="size-64 sm:size-80 lg:size-[470px]" gold label="" />
-            <MoonPhases size="size-7 lg:size-[34px]" gold />
+            <Logo className="size-64 sm:size-80 lg:size-117.5" gold label="" />
+            <MoonPhases size="size-7 lg:size-8.5" gold />
           </div>
         </div>
       </header>
 
       <main>
         {/* QUÉ HAGO */}
-        <section id="ofrezco" className="mx-auto flex max-w-[1440px] flex-col gap-20 px-5 py-24 sm:px-10 lg:gap-24 lg:px-24 lg:pt-36 lg:pb-32">
+        <section id="ofrezco" className="mx-auto flex max-w-360 flex-col gap-20 px-5 py-24 sm:px-10 lg:gap-24 lg:px-24 lg:pt-36 lg:pb-32">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-6">
             <h2 className="font-display text-5xl leading-[1.02] lg:col-span-5 lg:text-[64px]">
               Acompaño procesos de <em>transformación.</em>
@@ -103,9 +103,9 @@ export default function Home() {
 
         {/* FORMATOS */}
         <section className="bg-arena">
-          <div className="mx-auto flex max-w-[1440px] flex-col gap-14 px-5 py-24 sm:px-10 lg:px-24 lg:py-32">
+          <div className="mx-auto flex max-w-360 flex-col gap-14 px-5 py-24 sm:px-10 lg:px-24 lg:py-32">
             <div className="grid gap-8 lg:grid-cols-2">
-              <article className="flex min-h-[400px] flex-col gap-6 rounded-[28px] bg-noche p-10 text-marfil lg:p-14">
+              <article className="flex min-h-100 flex-col gap-6 rounded-[28px] bg-noche p-10 text-marfil lg:p-14">
                 <Logo className="size-14" gold label="" />
                 <h3 className="font-display text-5xl leading-none lg:text-[52px]">Sesiones individuales</h3>
                 <p className="text-lg leading-[1.7] font-light text-arena">
@@ -119,7 +119,7 @@ export default function Home() {
                   Completá tu ficha inicial
                 </Link>
               </article>
-              <article className="flex min-h-[400px] flex-col gap-6 rounded-[28px] bg-neblina p-10 lg:p-14">
+              <article className="flex min-h-100 flex-col gap-6 rounded-[28px] bg-neblina p-10 lg:p-14">
                 <svg viewBox="0 0 56 56" className="size-14" aria-hidden="true">
                   {[
                     [18, 28],
@@ -146,13 +146,13 @@ export default function Home() {
         </section>
 
         {/* PARA QUIÉN */}
-        <section id="para-quien" className="mx-auto max-w-[1440px] px-5 py-24 sm:px-10 lg:px-24 lg:py-36">
-          <div className="flex max-w-[1100px] flex-col gap-9">
+        <section id="para-quien" className="mx-auto max-w-360 px-5 py-24 sm:px-10 lg:px-24 lg:py-36">
+          <div className="flex max-w-275 flex-col gap-9">
             <p className="font-display text-4xl leading-[1.12] sm:text-5xl lg:text-6xl">
               Para quienes sienten la necesidad de <em className="text-oro-ink">parar, escucharse</em> y comprender
               mejor lo que les sucede.
             </p>
-            <p className="max-w-[680px] text-lg leading-[1.7] font-light text-tinta lg:text-[19px]">
+            <p className="max-w-170 text-lg leading-[1.7] font-light text-tinta lg:text-[19px]">
               Especialmente si estás atravesando un momento de cambio, de búsqueda personal, o querés transformar algún
               aspecto de tu vida.
             </p>
@@ -160,12 +160,12 @@ export default function Home() {
         </section>
 
         {/* DIFERENCIA */}
-        <section className="mx-auto flex max-w-[1440px] flex-col gap-16 px-5 pb-24 sm:px-10 lg:px-24 lg:pb-36">
+        <section className="mx-auto flex max-w-360 flex-col gap-16 px-5 pb-24 sm:px-10 lg:px-24 lg:pb-36">
           <div className="flex flex-col justify-between gap-6 border-t border-linea pt-16 lg:flex-row lg:items-end lg:gap-12">
-            <h2 className="max-w-[760px] font-display text-4xl leading-[1.05] sm:text-5xl lg:text-[56px]">
+            <h2 className="max-w-190 font-display text-4xl leading-[1.05] sm:text-5xl lg:text-[56px]">
               Que lo que trabajamos no quede solo en la sesión.
             </h2>
-            <p className="max-w-[420px] text-[17px] leading-[1.7] font-light text-tinta">
+            <p className="max-w-105 text-[17px] leading-[1.7] font-light text-tinta">
               Mi forma de acompañar parte de la escucha, la cercanía y la mirada integral de cada persona.
             </p>
           </div>
@@ -182,11 +182,11 @@ export default function Home() {
 
         {/* CTA */}
         <section className="flex flex-col items-center gap-9 bg-noche px-5 py-28 text-center text-marfil sm:px-10 lg:py-32">
-          <MoonPhases size="size-7 lg:size-[34px]" gold />
-          <h2 className="max-w-[900px] font-display text-5xl leading-none sm:text-6xl lg:text-[80px]">
+          <MoonPhases size="size-7 lg:size-8.5" gold />
+          <h2 className="max-w-225 font-display text-5xl leading-none sm:text-6xl lg:text-[80px]">
             Tu primer paso es <em className="text-oro">contarme de vos.</em>
           </h2>
-          <p className="max-w-[560px] text-lg leading-[1.7] font-light text-arena lg:text-[19px]">
+          <p className="max-w-140 text-lg leading-[1.7] font-light text-arena lg:text-[19px]">
             Completá la ficha inicial antes de nuestra primera sesión. Son siete preguntas y te lleva solo unos minutos.
           </p>
           <Link href="/ficha" className={ctaPrimary}>
@@ -197,7 +197,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer id="contacto" className="bg-noche-deep text-arena">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-14 px-5 pt-16 pb-12 sm:px-10 lg:px-24 lg:pt-[72px]">
+        <div className="mx-auto flex max-w-360 flex-col gap-14 px-5 pt-16 pb-12 sm:px-10 lg:px-24 lg:pt-18">
           <div className="flex flex-col justify-between gap-12 lg:flex-row lg:items-start">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3.5">

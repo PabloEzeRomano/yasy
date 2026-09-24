@@ -127,7 +127,7 @@ export function FichaForm() {
                   }`}
                 >
                   <span
-                    className={`inline-flex size-[30px] shrink-0 items-center justify-center rounded-full text-[13px] ${
+                    className={`inline-flex size-7.5 shrink-0 items-center justify-center rounded-full text-[13px] ${
                       active
                         ? "bg-oro text-noche"
                         : done
@@ -154,7 +154,7 @@ export function FichaForm() {
         {/* Encabezado móvil */}
         <header className="flex h-16 items-center justify-between bg-noche px-5 text-marfil lg:hidden">
           <Link href="/" className="flex items-center gap-2.5">
-            <Logo className="size-[34px]" gold label="" />
+            <Logo className="size-8.5" gold label="" />
             <span className="font-display text-xl tracking-[0.18em]">{brand.name}</span>
           </Link>
           {current && (
@@ -190,14 +190,14 @@ export function FichaForm() {
             className="flex flex-1 flex-col"
           >
             {/* Campo trampa anti-spam: oculto para personas */}
-            <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+            <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
               <label>
                 No completar
                 <input tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
               </label>
             </div>
 
-            <div ref={panelRef} key={step} className="flex max-w-[700px] flex-1 animate-rise flex-col justify-center py-8">
+            <div ref={panelRef} key={step} className="flex max-w-175 flex-1 animate-rise flex-col justify-center py-8">
               {step === 0 && (
                 <div className="flex flex-col gap-7">
                   <h2 className="font-display text-5xl leading-none sm:text-[76px]">
@@ -211,7 +211,7 @@ export function FichaForm() {
                     <button
                       type="submit"
                       data-autofocus
-                      className="caps h-[60px] rounded-full bg-noche px-10 text-[15px] tracking-[0.14em] text-marfil transition-colors hover:bg-noche-deep"
+                      className="caps h-15 rounded-full bg-noche px-10 text-[15px] tracking-[0.14em] text-marfil transition-colors hover:bg-noche-deep"
                     >
                       Empezar
                     </button>
@@ -230,7 +230,7 @@ export function FichaForm() {
                     value={data.nombre}
                     onChange={(e) => set("nombre", e.target.value)}
                     onKeyDown={onEnter}
-                    className="h-[72px] border-0 border-b border-noche bg-transparent font-display text-3xl outline-none focus:border-dorado sm:text-[38px]"
+                    className="h-18 border-0 border-b border-noche bg-transparent font-display text-3xl outline-none focus:border-dorado sm:text-[38px]"
                   />
                   <div className="flex flex-col gap-2.5">
                     <label htmlFor="f-contacto" className="text-lg text-tinta">
@@ -264,7 +264,7 @@ export function FichaForm() {
                       value={data.edad}
                       onChange={(e) => set("edad", e.target.value)}
                       onKeyDown={onEnter}
-                      className="h-[88px] w-[180px] border-0 border-b border-noche bg-transparent font-display text-6xl outline-none focus:border-dorado [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+                      className="h-22 w-45 border-0 border-b border-noche bg-transparent font-display text-6xl outline-none focus:border-dorado [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
                     />
                     <span className="font-display text-3xl text-gris">años</span>
                   </div>
@@ -391,7 +391,7 @@ export function FichaForm() {
             </div>
 
             {current && (
-              <div className="flex max-w-[700px] items-center justify-between gap-4 border-t border-[#E1D6C8] pt-5 lg:border-0 lg:pt-0">
+              <div className="flex max-w-175 items-center justify-between gap-4 border-t border-[#E1D6C8] pt-5 lg:border-0 lg:pt-0">
                 <button
                   type="button"
                   onClick={back}
@@ -407,7 +407,7 @@ export function FichaForm() {
                   <button
                     type="submit"
                     disabled={pending}
-                    className={`caps inline-flex h-[60px] items-center gap-3 rounded-full px-9 text-[15px] tracking-[0.14em] transition-colors disabled:opacity-60 ${
+                    className={`caps inline-flex h-15 items-center gap-3 rounded-full px-9 text-[15px] tracking-[0.14em] transition-colors disabled:opacity-60 ${
                       isLast ? "bg-oro text-noche hover:brightness-110" : "bg-noche text-marfil hover:bg-noche-deep"
                     }`}
                   >
@@ -467,7 +467,7 @@ function YesNo({
               data-autofocus={i === 0 && !value ? true : value === o.v ? true : undefined}
               className="peer sr-only"
             />
-            <span className="flex h-[60px] items-center justify-center rounded-full border border-[#9C927F] font-display text-[26px] transition-colors peer-checked:border-noche peer-checked:bg-noche peer-checked:text-marfil peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-dorado hover:border-noche sm:h-[72px] sm:w-[168px] sm:text-3xl">
+            <span className="flex h-15 items-center justify-center rounded-full border border-[#9C927F] font-display text-[26px] transition-colors peer-checked:border-noche peer-checked:bg-noche peer-checked:text-marfil peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-dorado hover:border-noche sm:h-18 sm:w-42 sm:text-3xl">
               {o.label}
             </span>
           </label>
