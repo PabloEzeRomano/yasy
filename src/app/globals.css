@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Paleta YASY by 8moons — "Propuesta 1: Mística y etérea" */
+@theme {
+  --color-noche: #1c2331;
+  --color-noche-deep: #151a26;
+  --color-marfil: #f6f1eb;
+  --color-arena: #e8dfd8;
+  --color-neblina: #c3d6dd;
+  --color-dorado: #d4af37;
+  --color-dorado-ink: #8a6a1e; /* dorado legible sobre fondos claros */
+  --color-ciruela: #581845; /* bordó: acento mínimo */
+  --color-tinta: #3a4152;
+  --color-gris: #5a6172;
+  --color-bruma: #c9cfd8;
+  --color-linea: #c9b98f;
+  --color-campo: #fbf8f4;
+  --color-borde: #cdbfa9;
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jost), system-ui, sans-serif;
+
+  --animate-rise: rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-marfil);
+    color: var(--color-noche);
+  }
+  ::selection {
+    background: var(--color-dorado);
+    color: var(--color-noche);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-dorado);
+    outline-offset: 3px;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #8a8f9a;
+  }
+}
+
+@layer utilities {
+  .caps {
+    font-size: 0.8125rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
